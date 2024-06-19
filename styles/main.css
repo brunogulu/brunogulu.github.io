@@ -1,0 +1,108 @@
+:root {
+    --main-color: #eab736;
+}
+
+* {
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+}
+
+h2 {
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    margin: auto;
+    padding: 0;
+    place-content: center;
+}
+
+.calendar {
+    display: flex;
+    flex-direction: column;
+    min-width: 329px;
+    width: 27vw;
+}
+
+.calendar_header {
+    align-items: center;
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    margin: 1.2rem;
+}
+
+.calendar_weekday {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin: 1.2rem 0;
+}
+
+.grid-weekday {
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.calendar_content {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 3rem);
+    height: 100%;
+    justify-items: center;
+}
+
+.calendar_content>div {
+    height: 70%;
+    min-height: 2rem;
+    min-width: 2.3rem;
+    text-align: center;
+    width: 80%;
+}
+
+.day {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0.6rem;
+}
+
+.night {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0.6rem;
+    border-style: dashed;
+}
+
+.switch-left {
+    cursor: pointer;
+}
+
+.switch-right {
+    cursor: pointer;
+}
+
+#newDate {
+    margin-top: 25%;
+    font-family: Inter;
+}
+
+.modal > * {
+    color: black;
+}
+
+.modal-content,
+.modal-header,
+.modal-footer {
+    border: 0;
+}
+
+.modal-body {
+    height: 100%;
+}
