@@ -70,12 +70,12 @@ h2 {
 }
 
 .day {
-    background: #A7A038;
+    background-color: #A7A038;
     border-radius: 0.6rem;
 }
 
 .night {
-    background: #2A3FA6;
+    background-color: #2A3FA6;
     border-radius: 0.6rem;
 }
 
