@@ -70,14 +70,13 @@ h2 {
 }
 
 .day {
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: #A7A038;
     border-radius: 0.6rem;
 }
 
 .night {
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: #2A3FA6;
     border-radius: 0.6rem;
-    border-style: dashed;
 }
 
 .switch-left {
