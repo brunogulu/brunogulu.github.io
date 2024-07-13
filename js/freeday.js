@@ -8,14 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const calendarDiv = document.getElementById("calendarContent"); // body del calendario
     const switchLeft = document.getElementById("switchLeft"); // botón mes anterior
     const switchRight = document.getElementById("switchRight"); // botón mes siguiente
-    const newDate = document.getElementById("newDate"); // botón ingresar fecha
-    const newDateModal = document.getElementById("newDateModal");
-    const modalInput = document.getElementById("modalInput");
+
     // Listeners
     switchLeft.addEventListener("click", prevMonth);
     switchRight.addEventListener("click", nextMonth);
-    newDate.addEventListener("click", goToDate);
-    // newDateModal.addEventListener("shown.bs.modal", modalInputHandler(modalInput));
 
     // Definir inicio de ciclo y el patrón de turno
     const STARTING_DATE = new Date(2024, 5, 1); // 1 de Junio de 2024 - Comienzo del ciclo
@@ -80,20 +76,6 @@ document.addEventListener("DOMContentLoaded", function () {
         currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
         currentMonth = (currentMonth + 1) % 12;
         generateCalendar(currentYear, currentMonth);
-    }
-
-    function goToDate(event) {
-        event.preventDefault();
-
-        // mostrar modal para ingresar fecha
-        // obtener fecha ingresada
-
-        console.log("clicked")
-        // generateCalendar(currentMonth, currentYear);
-    }
-
-    function modalInputHandler(modalInput) {
-        modalInput.focus();
     }
 
     // CALCULAR DIAS LABORALES Y FRANCOS
