@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Definir inicio de ciclo y el patrón de turno
     // const STARTING_DATE = new Date(2024, 5, 1); // 1 de Junio de 2024 - Comienzo del ciclo (viejo)
-    const STARTING_DATE = new Date(2025, 4, 29);
+    const STARTING_DATE = new Date(2025, 4, 30);
     const SHIFT = "DDDLLLNNNLLL";
     const shiftLength = SHIFT.length;
 
