@@ -5,10 +5,9 @@
  * Semana 3: N N F F D D D
  * Semana 4: F F N N F F F
  *
- * CYCLE_START debe ser un LUNES que corresponda a la Semana 1.
- * Ajustalo a tu primer lunes real de Semana 1.
+ * CYCLE_START: lunes de Semana 1.
  */
-const CYCLE_START = new Date(2026, 8, 14); // lunes 5 ene 2026 — CAMBIAR SI HACE FALTA
+const CYCLE_START = new Date(2026, 8, 14); // lunes 14 sep 2026 = Semana 1
 
 const WEEKS = [
     ["D", "D", "F", "F", "N", "N", "N"],
@@ -55,12 +54,13 @@ function shiftFor(date) {
 function renderCalendar() {
     const title = document.getElementById("monthAndYear");
     const grid = document.getElementById("calendarContent");
-    title.textContent = `${MONTHS_ES[viewMonth]} ${viewYear}`;
+    const monthName = MONTHS_ES[viewMonth];
+    title.textContent = `${monthName.charAt(0).toUpperCase()}${monthName.slice(1)} ${viewYear}`;
     grid.innerHTML = "";
 
     const first = new Date(viewYear, viewMonth, 1);
     const lastDate = new Date(viewYear, viewMonth + 1, 0).getDate();
-    const leadingEmpties = first.getDay(); // domingo primero
+    const leadingEmpties = (first.getDay() + 6) % 7; // lunes primero
 
     for (let i = 0; i < leadingEmpties; i++) {
         const empty = document.createElement("div");
