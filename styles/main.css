@@ -1,168 +1,166 @@
 :root {
-    --bg: #050505;
-    --card: #111;
-    --border: #2a2a2a;
-    --muted: #8a8a8a;
-    --day: #f5c518;
-    --night: #7c6cff;
-    --off: #3d3d3d;
-    --today: #ffffff;
+    --bg: #000;
+    --card: #141414;
+    --muted: #8d8d8d;
+    --day: #e6b800;
+    --night: #8b7cff;
+    --today: #fff;
 }
 
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html, body {
-    min-height: 100%;
     margin: 0;
-    font-family: "Inter", system-ui, sans-serif;
+    min-height: 100%;
     background: var(--bg);
+    color: #fff;
+    font-family: "Inter", system-ui, sans-serif;
 }
 
-.container {
-    max-width: 720px;
-    padding: 2rem 1rem 3rem;
+body {
+    display: flex;
+    justify-content: center;
+    padding: 16px 12px 32px;
+}
+
+.calendar-wrap {
+    width: 100%;
+    max-width: 420px;
 }
 
 .calendar {
     background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 1.25rem 1rem 1.5rem;
+    border-radius: 28px;
+    padding: 22px 16px 18px;
+    overflow: hidden;
 }
 
 .calendar_header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1rem;
+    margin-bottom: 14px;
+    padding: 0 4px;
 }
 
 .calendar_header h2 {
     margin: 0;
-    font-size: 1.35rem;
-    font-weight: 600;
-    text-transform: capitalize;
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
-.switch-left,
-.switch-right {
+.nav {
+    display: flex;
+    gap: 10px;
+}
+
+.nav button {
+    width: 34px;
+    height: 34px;
+    border: 1.5px solid #3a3a3a;
+    background: transparent;
+    color: #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    padding: 0;
     cursor: pointer;
-    opacity: 0.8;
-    transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
-.switch-left:hover,
-.switch-right:hover {
-    opacity: 1;
-    transform: scale(1.06);
+.nav button svg {
+    width: 16px;
+    height: 16px;
 }
 
 .calendar_weekday,
 .calendar_content {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 6px;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 8px;
 }
 
 .grid-weekday {
     text-align: center;
-    font-size: 0.75rem;
-    letter-spacing: 0.04em;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--muted);
-    padding: 0.35rem 0 0.7rem;
+    padding-bottom: 6px;
 }
 
 .day-cell {
+    min-width: 0;
     aspect-ratio: 1;
-    min-height: 56px;
-    border-radius: 12px;
-    border: 1px solid transparent;
+    border-radius: 14px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2px;
-    background: #1a1a1a;
-    color: #ddd;
+    gap: 1px;
+    background: #1c1c1c;
+    color: #9a9a9a;
 }
 
 .day-cell.empty {
     background: transparent;
-    border: none;
 }
 
 .day-cell .num {
-    font-size: 0.95rem;
-    font-weight: 600;
-    line-height: 1;
+    font-size: 0.92rem;
+    font-weight: 650;
+    line-height: 1.1;
 }
 
 .day-cell .shift {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     font-weight: 700;
-    letter-spacing: 0.04em;
 }
 
 .day-cell.D {
-    background: rgba(245, 197, 24, 0.16);
-    border-color: rgba(245, 197, 24, 0.45);
+    background: #2a2208;
     color: var(--day);
+    box-shadow: inset 0 0 0 1.5px #6a5610;
 }
 
 .day-cell.N {
-    background: rgba(124, 108, 255, 0.18);
-    border-color: rgba(124, 108, 255, 0.5);
-    color: #c9c0ff;
+    background: #1c1833;
+    color: #c4bbff;
+    box-shadow: inset 0 0 0 1.5px #5a4fb0;
 }
 
 .day-cell.F {
-    background: #161616;
-    color: #9a9a9a;
+    background: #1c1c1c;
+    color: #8f8f8f;
 }
 
 .day-cell.today {
-    box-shadow: 0 0 0 2px var(--today);
+    box-shadow: inset 0 0 0 2px #fff;
 }
 
 .legend {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 1.1rem;
-    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
 }
 
 .legend-item {
-    font-size: 0.8rem;
-    padding: 0.25rem 0.6rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 11px;
     border-radius: 999px;
-    border: 1px solid var(--border);
+    border: 1.5px solid #333;
+    color: #aaa;
 }
 
 .legend-item.day {
     color: var(--day);
-    border-color: rgba(245, 197, 24, 0.4);
+    border-color: #6a5610;
 }
 
 .legend-item.night {
-    color: #c9c0ff;
-    border-color: rgba(124, 108, 255, 0.45);
-}
-
-.legend-item.off {
-    color: #9a9a9a;
-}
-
-.hint {
-    margin: 0.9rem 0 0;
-    text-align: center;
-    font-size: 0.75rem;
-    color: var(--muted);
-}
-
-.hint code {
-    color: #ccc;
+    color: #c4bbff;
+    border-color: #5a4fb0;
 }
