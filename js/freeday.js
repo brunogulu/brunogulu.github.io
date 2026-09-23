@@ -8,7 +8,7 @@
  * CYCLE_START debe ser un LUNES que corresponda a la Semana 1.
  * Ajustalo a tu primer lunes real de Semana 1.
  */
-const CYCLE_START = new Date(2026, 0, 5); // lunes 5 ene 2026 — CAMBIAR SI HACE FALTA
+const CYCLE_START = new Date(2026, 8, 14); // lunes 5 ene 2026 — CAMBIAR SI HACE FALTA
 
 const WEEKS = [
     ["D", "D", "F", "F", "N", "N", "N"],
